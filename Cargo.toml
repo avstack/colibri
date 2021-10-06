@@ -1,0 +1,11 @@
+[package]
+name = "colibri"
+version = "0.1.0"
+edition = "2018"
+license = "MIT/Apache-2.0"
+authors = ["Jasper Hugo <jasper@avstack.io>"]
+
+[dependencies]
+serde = { version = "1", default-features = false, features = ["derive"] }
+serde_json = { version = "1", default-features = false, features = ["std"] }
+serde_with = { version = "1", default-features = false, features = ["macros"] }
