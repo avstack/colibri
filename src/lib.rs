@@ -20,7 +20,7 @@ pub enum ColibriMessage {
   },
   #[serde(rename_all = "camelCase")]
   EndpointMessage {
-    from: String,
+    from: Option<String>,
     to: Option<String>,
     msg_payload: serde_json::Value,
   },
@@ -39,6 +39,10 @@ pub enum ColibriMessage {
   LastNChangedEvent { last_n: i32 },
   #[serde(rename_all = "camelCase")]
   LastNEndpointsChangeEvent { last_n_endpoints: Vec<String> },
+  #[serde(rename_all = "camelCase")]
+  PinnedEndpointChangedEvent {
+    pinned_endpoint: Option<String>,
+  },
   #[serde(rename_all = "camelCase")]
   ReceiverVideoConstraint { max_frame_height: i32 },
   #[serde(rename_all = "camelCase")]
