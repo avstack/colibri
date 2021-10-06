@@ -2,6 +2,8 @@
 name = "colibri"
 version = "0.1.0"
 edition = "2018"
+description = "Rust data structures for Jitsi Meet Colibri messages"
+repository = "https://github.com/avstack/colibri"
 license = "MIT/Apache-2.0"
 authors = ["Jasper Hugo <jasper@avstack.io>"]
 
