@@ -31,19 +31,19 @@ pub enum ColibriMessage {
     packet_loss: PacketLoss,
     connection_quality: f32,
     #[serde(rename = "jvbRTT")]
-    jvb_rtt: Option<u16>,
+    jvb_rtt: Option<i32>,
     server_region: String,
-    max_enabled_resolution: u16,
+    max_enabled_resolution: i32,
   },
   #[serde(rename_all = "camelCase")]
-  LastNChangedEvent { last_n: u16 },
+  LastNChangedEvent { last_n: i32 },
   #[serde(rename_all = "camelCase")]
   LastNEndpointsChangeEvent { last_n_endpoints: Vec<String> },
   #[serde(rename_all = "camelCase")]
-  ReceiverVideoConstraint { max_frame_height: u16 },
+  ReceiverVideoConstraint { max_frame_height: i32 },
   #[serde(rename_all = "camelCase")]
   ReceiverVideoConstraints {
-    last_n: Option<u16>,
+    last_n: Option<i32>,
     selected_endpoints: Option<Vec<String>>,
     on_stage_endpoints: Option<Vec<String>>,
     default_constraints: Option<Constraints>,
@@ -69,8 +69,8 @@ pub enum VideoType {
 #[derive(Clone, Debug, Deserialize, Serialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct Constraints {
-  pub ideal_height: Option<u16>,
-  pub max_height: Option<u16>,
+  pub ideal_height: Option<i32>,
+  pub max_height: Option<i32>,
 }
 
 #[derive(Clone, Debug, Deserialize, Serialize, PartialEq)]
@@ -85,14 +85,14 @@ pub struct Bitrates {
 #[derive(Clone, Debug, Deserialize, Serialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct Bitrate {
-  pub upload: u32,
-  pub download: u32,
+  pub upload: u64,
+  pub download: u64,
 }
 
 #[derive(Clone, Debug, Deserialize, Serialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct PacketLoss {
-  pub total: u32,
-  pub download: u32,
-  pub upload: u32,
+  pub total: u64,
+  pub download: u64,
+  pub upload: u64,
 }
