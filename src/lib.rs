@@ -26,7 +26,7 @@ pub enum ColibriMessage {
   },
   #[serde(rename_all = "camelCase")]
   EndpointStats {
-    from: String,
+    from: Option<String>,
     bitrate: Bitrates,
     packet_loss: PacketLoss,
     connection_quality: f32,
