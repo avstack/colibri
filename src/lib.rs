@@ -33,7 +33,7 @@ pub enum ColibriMessage {
     #[serde(rename = "jvbRTT")]
     jvb_rtt: Option<i32>,
     server_region: String,
-    max_enabled_resolution: i32,
+    max_enabled_resolution: Option<i32>,
   },
   #[serde(rename_all = "camelCase")]
   LastNChangedEvent { last_n: i32 },
@@ -68,6 +68,7 @@ pub enum ColibriMessage {
 pub enum VideoType {
   Camera,
   Desktop,
+  None,
 }
 
 #[derive(Clone, Debug, Deserialize, Serialize, PartialEq)]
