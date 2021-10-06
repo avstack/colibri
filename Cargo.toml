@@ -1,9 +1,10 @@
 [package]
 name = "colibri"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2018"
 description = "Rust data structures for Jitsi Meet Colibri messages"
 repository = "https://github.com/avstack/colibri"
+readme = "README.md"
 license = "MIT/Apache-2.0"
 authors = ["Jasper Hugo <jasper@avstack.io>"]
 
