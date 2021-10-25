@@ -32,7 +32,7 @@ pub enum ColibriMessage {
     connection_quality: f32,
     #[serde(rename = "jvbRTT")]
     jvb_rtt: Option<i32>,
-    server_region: String,
+    server_region: Option<String>,
     max_enabled_resolution: Option<i32>,
   },
   #[serde(rename_all = "camelCase")]
