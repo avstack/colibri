@@ -79,7 +79,9 @@ pub enum VideoType {
 #[derive(Clone, Debug, Deserialize, Serialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct Constraints {
+  #[serde(skip_serializing_if = "Option::is_none")]
   pub ideal_height: Option<i32>,
+  #[serde(skip_serializing_if = "Option::is_none")]
   pub max_height: Option<i32>,
 }
 
