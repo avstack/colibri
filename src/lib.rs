@@ -108,3 +108,10 @@ pub struct PacketLoss {
   pub download: u64,
   pub upload: u64,
 }
+
+#[derive(Clone, Debug, Deserialize, Serialize, PartialEq)]
+#[serde(rename_all = "kebab-case", tag = "type")]
+pub enum JsonMessage {
+  E2ePingRequest { id: i32 },
+  E2ePingResponse { id: i32 },
+}
