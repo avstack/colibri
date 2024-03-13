@@ -36,6 +36,8 @@ pub enum ColibriMessage {
         max_enabled_resolution: Option<i32>,
     },
     #[serde(rename_all = "camelCase")]
+    ForwardedSources { forwarded_sources: Vec<String> },
+    #[serde(rename_all = "camelCase")]
     LastNChangedEvent { last_n: i32 },
     #[serde(rename_all = "camelCase")]
     LastNEndpointsChangeEvent { last_n_endpoints: Vec<String> },
