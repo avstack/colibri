@@ -66,6 +66,14 @@ pub enum ColibriMessage {
     ServerHello { version: Option<String> },
     #[serde(rename_all = "camelCase")]
     VideoTypeMessage { video_type: VideoType },
+    #[serde(rename_all = "camelCase")]
+    SourceVideoTypeMessage { source_name: String, video_type: VideoType },
+    #[serde(rename_all = "camelCase")]
+    SenderSourceConstraints { source_name: String, max_height: i32 },
+    #[serde(rename_all = "camelCase")]
+    VideoSourcesMap { mapped_sources: Vec<VideoSourceMapping> },
+    #[serde(rename_all = "camelCase")]
+    AudioSourcesMap { mapped_sources: Vec<AudioSourceMapping> },
 }
 
 #[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq)]
@@ -74,6 +82,24 @@ pub enum VideoType {
     Camera,
     Desktop,
     None,
+}
+
+#[derive(Clone, Debug, Deserialize, Serialize, PartialEq)]
+#[serde(rename_all = "camelCase")]
+pub struct VideoSourceMapping {
+    source: String,
+    owner: Option<String>,
+    ssrc: u32,
+    rtx: u32,
+    video_type: VideoType,
+}
+
+#[derive(Clone, Debug, Deserialize, Serialize, PartialEq)]
+#[serde(rename_all = "camelCase")]
+pub struct AudioSourceMapping {
+    source: String,
+    owned: Option<String>,
+    ssrc: u32,
 }
 
 #[derive(Clone, Debug, Deserialize, Serialize, PartialEq)]

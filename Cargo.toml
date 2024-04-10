@@ -1,6 +1,6 @@
 [package]
 name = "colibri"
-version = "0.1.10"
+version = "0.1.11"
 edition = "2021"
 description = "Rust data structures for Jitsi Meet Colibri messages"
 repository = "https://github.com/avstack/colibri"
