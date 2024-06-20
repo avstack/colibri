@@ -52,7 +52,11 @@ pub enum ColibriMessage {
         #[serde(skip_serializing_if = "Option::is_none")]
         selected_endpoints: Option<Vec<String>>,
         #[serde(skip_serializing_if = "Option::is_none")]
+        selected_sources: Option<Vec<String>>,
+        #[serde(skip_serializing_if = "Option::is_none")]
         on_stage_endpoints: Option<Vec<String>>,
+        #[serde(skip_serializing_if = "Option::is_none")]
+        on_stage_sources: Option<Vec<String>>,
         #[serde(skip_serializing_if = "Option::is_none")]
         default_constraints: Option<Constraints>,
         #[serde(skip_serializing_if = "Option::is_none")]
